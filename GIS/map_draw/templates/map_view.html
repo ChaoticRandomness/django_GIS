@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map View</title>
+</head>
+<body>
+    {% if map_html %}
+        {{ map_html|safe }}
+    {% else %}
+        <p>Please enter two coordinates.</p>
+    {% endif %}
+
+    <form method="GET">
+        <label>Latitude 1:</label>
+        <input type="text" name="lat1" value="{{ request.GET.lat1 }}">
+        <label>Longitude 1:</label>
+        <input type="text" name="lng1" value="{{ request.GET.lng1 }}"><br>
+        <label>Latitude 2:</label>
+        <input type="text" name="lat2" value="{{ request.GET.lat2 }}">
+        <label>Longitude 2:</label>
+        <input type="text" name="lng2" value="{{ request.GET.lng2 }}"><br>
+        <button type="submit">Draw Line</button>
+    </form>
+</body>
+</html>
